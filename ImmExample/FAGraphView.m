@@ -8,6 +8,10 @@
 
 #import "FAGraphView.h"
 
+#define VALUE_MIN	-100.0
+#define VALUE_MAX	100.0
+#define VALUE_RANGE	(VALUE_MAX - VALUE_MIN)
+#define VALUE_MID	((VALUE_MAX + VALUE_MIN) / 2.0)
 
 @implementation FAGraphView
 
@@ -32,25 +36,46 @@
 
 - (void) drawRect: (CGRect) rect
 {
+	//	Reset the delegate's clock for iteration.
 	[self.delegate resetIterationForGraph: self];
 	
 	CGContextRef	context = UIGraphicsGetCurrentContext();
 	CGRect			bounds = self.bounds;
 	
+	//	Fill my rect with white
 	[[UIColor whiteColor] setFill];
 	CGContextFillRect(context, bounds);
 	
+	//	Across my width (stepping by pixelsPerIteration...
 	BOOL			firstPass = YES;
 	NSUInteger		steps = round(bounds.size.width / self.pixelsPerIteration);
 	for (NSUInteger index = 0; index < steps; index++) {
+		//	x = the index'th step
 		CGFloat		abscissa = CGRectGetMinX(bounds) + index * self.pixelsPerIteration;
+		//	y = the value for the next tick from the delegate
 		CGFloat		ordinate = [self.delegate nextValueForGraph: self];
+		
+		//	Pin it to the value range
+		if (ordinate > VALUE_MAX)
+			ordinate = VALUE_MAX;
+		if (ordinate < VALUE_MIN)
+			ordinate = VALUE_MIN;
+		
+		//	Where is it proportional to the value range?
+		ordinate = (ordinate - VALUE_MIN) / VALUE_RANGE;
+		//	Turn it into the same proportion of the view height.
+		ordinate = CGRectGetMinY(bounds) + ordinate * bounds.size.height;
+		//	TODO: redo this as a coordinate transform.
+		
+		//	At the first pass, set the "pen" down at the first value;
+		//	at subsequent passes, move the "pen" to the next point.
 		if (firstPass)
 			CGContextMoveToPoint(context, abscissa, ordinate);
 		else
 			CGContextAddLineToPoint(context, abscissa, ordinate);
 		firstPass = NO;
 	}
+	//	Stroke the graph in black.
 	[[UIColor blackColor] setStroke];
 	CGContextStrokePath(context);
 }

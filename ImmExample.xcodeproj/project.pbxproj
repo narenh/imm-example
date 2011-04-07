@@ -99,6 +99,7 @@
 				1FD33D20134E33A1000BB622 /* ImmExampleAppDelegate.m */,
 				1FD33D22134E33A1000BB622 /* MainWindow.xib */,
 				1FD33D3B134E5054000BB622 /* Custom models */,
+				1FD33D4C134E5F65000BB622 /* Custom Views */,
 				1FD33D34134E4A16000BB622 /* Custom Controllers */,
 				1FD33D33134E496E000BB622 /* Core Controllers */,
 				1FD33D17134E33A1000BB622 /* Supporting Files */,
@@ -136,8 +137,6 @@
 				1FD33D35134E4A57000BB622 /* FAExampleController.h */,
 				1FD33D36134E4A57000BB622 /* FAExampleController.m */,
 				1FD33D3C134E50C4000BB622 /* FAExampleController.xib */,
-				1FD33D49134E5B2D000BB622 /* FAGraphView.h */,
-				1FD33D4A134E5B2D000BB622 /* FAGraphView.m */,
 			);
 			name = "Custom Controllers";
 			sourceTree = "<group>";
@@ -149,6 +148,15 @@
 				1FD33D39134E4B07000BB622 /* FAModel.m */,
 			);
 			name = "Custom models";
+			sourceTree = "<group>";
+		};
+		1FD33D4C134E5F65000BB622 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FD33D49134E5B2D000BB622 /* FAGraphView.h */,
+				1FD33D4A134E5B2D000BB622 /* FAGraphView.m */,
+			);
+			name = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

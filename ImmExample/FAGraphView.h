@@ -14,7 +14,7 @@
     
 }
 
-@property(nonatomic, assign) id <FAGraphViewDelegate>	delegate;
+@property(nonatomic, assign) IBOutlet id <FAGraphViewDelegate>	delegate;
 @property(nonatomic, assign) double						pixelsPerIteration;
 
 @end
