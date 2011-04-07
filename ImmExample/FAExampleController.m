@@ -1,0 +1,65 @@
+//
+//  FAExampleController.m
+//  ImmExample
+//
+//  Created by Fritz Anderson on 4/7/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import "FAExampleController.h"
+#import "FAModel.h"
+
+#define TENSION_MIN		0.0
+#define TENSION_MAX		100.0
+
+#define DRAG_MIN		0.0
+#define DRAG_MAX		10.0
+
+#define POSITION_MIN	-50.0
+#define POSITION_MAX	50.0
+
+#define SPEED_MIN		-25.0
+#define SPEED_MAX		25.0
+
+@implementation FAExampleController
+
+@synthesize tensionSlider;
+@synthesize dragSlider;
+@synthesize positionSlider;
+@synthesize speedSlider;
+@synthesize model;
+
+- (void) dealloc
+{
+	[model release];
+    [tensionSlider release];
+    [dragSlider release];
+    [positionSlider release];
+    [speedSlider release];
+	[super dealloc];
+}
+
+#define CHANGE_BODY(min, max, control, property) { \
+	double	value = min + self.control.value * (max - min); \
+	self.model.property = value; \
+}
+
+- (IBAction) changeTension: (id) sender
+CHANGE_BODY(TENSION_MIN, TENSION_MAX, tensionSlider, tension)
+
+- (IBAction) changeDrag: (id) sender
+CHANGE_BODY(DRAG_MIN, DRAG_MAX, dragSlider, drag)
+
+- (IBAction) changeInitialPosition: (id) sender
+CHANGE_BODY(POSITION_MIN, POSITION_MAX, positionSlider, sZero)
+
+- (IBAction) changeInitialSpeed: (id) sender 
+CHANGE_BODY(SPEED_MIN, SPEED_MAX, speedSlider, sDotZero)
+
+- (IBAction) doReset: (id) sender 
+{
+	[self.model reset];
+	//	TODO: Initiate a redraw of the graph view.
+}
+
+@end
