@@ -27,6 +27,7 @@
 @synthesize dragSlider;
 @synthesize positionSlider;
 @synthesize speedSlider;
+@synthesize graphView;
 @synthesize model;
 
 - (void) dealloc
@@ -36,30 +37,50 @@
     [dragSlider release];
     [positionSlider release];
     [speedSlider release];
+	[graphView release];
 	[super dealloc];
 }
 
-#define CHANGE_BODY(min, max, control, property) { \
-	double	value = min + self.control.value * (max - min); \
-	self.model.property = value; \
+#pragma mark -
+#pragma mark FAGraphViewDelegate
+
+- (void) resetIterationForGraph: (FAGraphView *) graph
+{
+	[self.model reset];
 }
 
-- (IBAction) changeTension: (id) sender
-CHANGE_BODY(TENSION_MIN, TENSION_MAX, tensionSlider, tension)
+- (double) nextValueForGraph: (FAGraphView *) graph
+{
+	return [self.model tick];
+}
 
-- (IBAction) changeDrag: (id) sender
-CHANGE_BODY(DRAG_MIN, DRAG_MAX, dragSlider, drag)
+#pragma mark -
+#pragma mark IBAction
 
-- (IBAction) changeInitialPosition: (id) sender
-CHANGE_BODY(POSITION_MIN, POSITION_MAX, positionSlider, sZero)
+#define CHANGE_BODY(min, max, control, property) \
+	double	value = min + [[self control] value] * (max - min); \
+	self.model.property = value;
 
-- (IBAction) changeInitialSpeed: (id) sender 
-CHANGE_BODY(SPEED_MIN, SPEED_MAX, speedSlider, sDotZero)
+- (IBAction) changeTension: (id) sender {
+	CHANGE_BODY(TENSION_MIN, TENSION_MAX, tensionSlider, tension);
+}
+
+- (IBAction) changeDrag: (id) sender {
+	CHANGE_BODY(DRAG_MIN, DRAG_MAX, dragSlider, drag);
+}
+
+- (IBAction) changeInitialPosition: (id) sender {
+	CHANGE_BODY(POSITION_MIN, POSITION_MAX, positionSlider, sZero);
+}
+
+- (IBAction) changeInitialSpeed: (id) sender {
+	CHANGE_BODY(SPEED_MIN, SPEED_MAX, speedSlider, sDotZero);
+}
+
 
 - (IBAction) doReset: (id) sender 
 {
-	[self.model reset];
-	//	TODO: Initiate a redraw of the graph view.
+	[self.graphView setNeedsDisplay];
 }
 
 @end
