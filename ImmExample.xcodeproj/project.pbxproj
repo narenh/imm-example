@@ -21,6 +21,7 @@
 		1FD33D3A134E4B07000BB622 /* FAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD33D39134E4B07000BB622 /* FAModel.m */; };
 		1FD33D3D134E50C4000BB622 /* FAExampleController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FD33D3C134E50C4000BB622 /* FAExampleController.xib */; };
 		1FD33D47134E5293000BB622 /* FAExampleBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FD33D46134E5293000BB622 /* FAExampleBackground.png */; };
+		1FD33D4B134E5B2D000BB622 /* FAGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD33D4A134E5B2D000BB622 /* FAGraphView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		1FD33D39134E4B07000BB622 /* FAModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAModel.m; sourceTree = "<group>"; };
 		1FD33D3C134E50C4000BB622 /* FAExampleController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FAExampleController.xib; sourceTree = "<group>"; };
 		1FD33D46134E5293000BB622 /* FAExampleBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FAExampleBackground.png; sourceTree = "<group>"; };
+		1FD33D49134E5B2D000BB622 /* FAGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAGraphView.h; sourceTree = "<group>"; };
+		1FD33D4A134E5B2D000BB622 /* FAGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAGraphView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 				1FD33D35134E4A57000BB622 /* FAExampleController.h */,
 				1FD33D36134E4A57000BB622 /* FAExampleController.m */,
 				1FD33D3C134E50C4000BB622 /* FAExampleController.xib */,
+				1FD33D49134E5B2D000BB622 /* FAGraphView.h */,
+				1FD33D4A134E5B2D000BB622 /* FAGraphView.m */,
 			);
 			name = "Custom Controllers";
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				1FD33D32134E3D75000BB622 /* ImExController.m in Sources */,
 				1FD33D37134E4A57000BB622 /* FAExampleController.m in Sources */,
 				1FD33D3A134E4B07000BB622 /* FAModel.m in Sources */,
+				1FD33D4B134E5B2D000BB622 /* FAGraphView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
