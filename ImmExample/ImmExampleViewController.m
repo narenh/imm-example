@@ -7,15 +7,39 @@
 //
 
 #import "ImmExampleViewController.h"
+#import "ImExController.h"
+
+NSArray *		gExampleControllerNames	= nil;
+
+@interface ImmExampleViewController ()
+///	An array of ImExController objects.
+@property(nonatomic, retain) NSMutableArray *			controllers;
+@end
+
 
 @implementation ImmExampleViewController
+@synthesize scrollView, toolbar;
+@synthesize controllers;
 
-- (void)dealloc
++ (void) initialize
 {
+	//	On first reference to this class, fill the global array of controller class names.
+	if (! gExampleControllerNames) {
+		gExampleControllerNames = [[NSArray alloc] initWithObjects:
+							   @"FAExampleController",
+							   nil];
+	}
+}
+
+- (void) dealloc
+{
+	[scrollView release];
+	[toolbar release];
+	[controllers release];
     [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning
+- (void) didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
@@ -25,22 +49,48 @@
 
 #pragma mark - View lifecycle
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [super viewDidLoad];
+	
+	self.controllers = [NSMutableArray array];
+	
+	CGRect			totalContentRect = self.scrollView.bounds;
+	totalContentRect.size.height = 0;
+	
+	for (NSString * name in gExampleControllerNames) {
+		//	Instantiate each controller from its name.
+		Class				controllerClass = NSClassFromString(name);
+		ImExController *	controller = [[controllerClass alloc] init];
+		
+		//	Calculate the view's size and position in the scroller.
+		CGRect				viewFrame = controller.view.frame;
+		viewFrame.origin.x = CGRectGetMinX(totalContentRect);
+		viewFrame.origin.y = CGRectGetMaxY(totalContentRect);
+		viewFrame.size.width = totalContentRect.size.width;
+		
+		//	Set the size and position and add the view to the scroller.
+		controller.view.frame = viewFrame;
+		[self.scrollView addSubview: controller.view];
+		
+		//	Increment the bounding rectangle.
+		totalContentRect.size.height = CGRectGetMaxY(viewFrame);
+		[self.controllers addObject: controller];
+		[controller release];
+	}
+	//	Make the scrolling area correspond to the bounding rect.
+	self.scrollView.contentSize = totalContentRect.size;
 }
-*/
 
-- (void)viewDidUnload
+- (void) viewDidUnload
 {
+	self.controllers = nil;
+	[self setScrollView:nil];
+	[self setToolbar:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
