@@ -61,6 +61,7 @@ NSArray *		gExampleControllerNames	= nil;
 	for (NSString * name in gExampleControllerNames) {
 		//	Instantiate each controller from its name.
 		Class				controllerClass = NSClassFromString(name);
+		NSAssert2(controllerClass, @"%s: Can't get class %@", __PRETTY_FUNCTION__, name);
 		ImExController *	controller = [[controllerClass alloc] init];
 		
 		//	Calculate the view's size and position in the scroller.
