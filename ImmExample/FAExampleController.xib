@@ -51,6 +51,7 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{320, 361}</string>
 						<reference key="NSSuperview" ref="822597992"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="729930182"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -64,6 +65,7 @@
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{63, 270}, {240, 23}}</string>
 						<reference key="NSSuperview" ref="822597992"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="958442088"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -76,6 +78,7 @@
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{63, 240}, {240, 23}}</string>
 						<reference key="NSSuperview" ref="822597992"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="720701979"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -88,6 +91,7 @@
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{63, 210}, {241, 23}}</string>
 						<reference key="NSSuperview" ref="822597992"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="627610737"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -100,6 +104,7 @@
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{63, 180}, {241, 23}}</string>
 						<reference key="NSSuperview" ref="822597992"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="48080483"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -112,6 +117,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{0, 180}, {61, 21}}</string>
 						<reference key="NSSuperview" ref="822597992"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="325870413"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -138,6 +144,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{0, 209}, {61, 21}}</string>
 						<reference key="NSSuperview" ref="822597992"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="124803002"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -157,6 +164,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{0, 240}, {61, 21}}</string>
 						<reference key="NSSuperview" ref="822597992"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="25343735"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -176,6 +184,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{0, 269}, {61, 21}}</string>
 						<reference key="NSSuperview" ref="822597992"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="680091599"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -195,6 +204,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{122, 304}, {76, 37}}</string>
 						<reference key="NSSuperview" ref="822597992"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -206,7 +216,7 @@
 							<int key="NSfFlags">16</int>
 						</object>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Restart</string>
+						<string key="IBUINormalTitle">Reset</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -225,6 +235,7 @@
 						<int key="NSvFlags">290</int>
 						<string key="NSFrameSize">{320, 164}</string>
 						<reference key="NSSuperview" ref="822597992"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="861441694"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -238,6 +249,7 @@
 				</object>
 				<string key="NSFrameSize">{320, 361}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="783452189"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -524,7 +536,178 @@
 			<nil key="sourceID"/>
 			<int key="maxID">29</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">FAExampleController</string>
+					<string key="superclassName">ImExController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>changeDrag:</string>
+							<string>changeInitialPosition:</string>
+							<string>changeInitialSpeed:</string>
+							<string>changeTension:</string>
+							<string>doReset:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>changeDrag:</string>
+							<string>changeInitialPosition:</string>
+							<string>changeInitialSpeed:</string>
+							<string>changeTension:</string>
+							<string>doReset:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">changeDrag:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">changeInitialPosition:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">changeInitialSpeed:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">changeTension:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">doReset:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>dragSlider</string>
+							<string>graphView</string>
+							<string>model</string>
+							<string>positionSlider</string>
+							<string>speedSlider</string>
+							<string>tensionSlider</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UISlider</string>
+							<string>FAGraphView</string>
+							<string>FAModel</string>
+							<string>UISlider</string>
+							<string>UISlider</string>
+							<string>UISlider</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>dragSlider</string>
+							<string>graphView</string>
+							<string>model</string>
+							<string>positionSlider</string>
+							<string>speedSlider</string>
+							<string>tensionSlider</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">dragSlider</string>
+								<string key="candidateClassName">UISlider</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">graphView</string>
+								<string key="candidateClassName">FAGraphView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">model</string>
+								<string key="candidateClassName">FAModel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">positionSlider</string>
+								<string key="candidateClassName">UISlider</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">speedSlider</string>
+								<string key="candidateClassName">UISlider</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">tensionSlider</string>
+								<string key="candidateClassName">UISlider</string>
+							</object>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/FAExampleController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">FAGraphView</string>
+					<string key="superclassName">UIView</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">delegate</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">delegate</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">delegate</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/FAGraphView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">FAModel</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/FAModel.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">ImExController</string>
+					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">view</string>
+						<string key="NS.object.0">UIView</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">view</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">view</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ImExController.h</string>
+					</object>
+				</object>
+			</object>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">

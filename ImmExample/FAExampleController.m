@@ -18,8 +18,8 @@
 #define POSITION_MIN	-100.0
 #define POSITION_MAX	100.0
 
-#define SPEED_MIN		-100.0
-#define SPEED_MAX		100.0
+#define SPEED_MIN		-250.0
+#define SPEED_MAX		250.0
 
 @implementation FAExampleController
 
@@ -54,7 +54,7 @@
 	return [self.model tick];
 }
 
-- (void) viewDidLoad
+- (void) setSliders
 {
 	double		val;
 	
@@ -67,6 +67,11 @@
 	SET_SLIDER(DRAG_MIN, DRAG_MAX, dragSlider, drag);
 	SET_SLIDER(POSITION_MIN, POSITION_MAX, positionSlider, sZero);
 	SET_SLIDER(SPEED_MIN, SPEED_MAX, speedSlider, sDotZero);
+}
+
+- (void) viewDidLoad
+{
+	[self setSliders];
 }
 
 #pragma mark -
@@ -96,6 +101,8 @@
 
 - (IBAction) doReset: (id) sender 
 {
+	[self.model zeroOut];
+	[self setSliders];
 	[self.graphView setNeedsDisplay];
 }
 
