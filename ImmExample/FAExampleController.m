@@ -18,8 +18,8 @@
 #define POSITION_MIN	-100.0
 #define POSITION_MAX	100.0
 
-#define SPEED_MIN		-50.0
-#define SPEED_MAX		50.0
+#define SPEED_MIN		-100.0
+#define SPEED_MAX		100.0
 
 @implementation FAExampleController
 
@@ -74,7 +74,8 @@
 
 #define CHANGE_BODY(min, max, control, property) \
 	double	value = min + [[self control] value] * (max - min); \
-	self.model.property = value;
+	self.model.property = value; \
+	[self.graphView setNeedsDisplay];
 
 - (IBAction) changeTension: (id) sender {
 	CHANGE_BODY(TENSION_MIN, TENSION_MAX, tensionSlider, tension);
