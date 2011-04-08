@@ -66,7 +66,7 @@
 	CGContextTranslateCTM(context, 0.0, CGRectGetMidY(bounds));
 	CGContextScaleCTM(context, 1.0, -VALUE_RANGE / bounds.size.height);
 	
-	//	Across my width (stepping by pixelsPerIteration...
+	//	Across my width (stepping by pixelsPerIteration)...
 	BOOL			firstPass = YES;
 	NSUInteger		steps = round(bounds.size.width / self.pixelsPerIteration);
 	for (NSUInteger index = 0; index < steps; index++) {

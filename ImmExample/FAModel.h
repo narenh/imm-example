@@ -48,12 +48,15 @@
 ///	by the current position.
 ///	Tension is expressed as a positive number, even though the force
 ///	is in the opposite direction from position.
+///	\todo Enforce tension >= 0
 @property(nonatomic, assign) double		tension;
 ///	The damping constant, or drag on the oscillator's motion.
 ///	Drag is a force proportional, and opposite, to the current velocity.
-///	It is expressed as a positive number. 
+///	It is expressed as a positive number.
+///	\todo Enforce drag >= 0
 @property(nonatomic, assign) double		drag;
 ///	The amount of time a "tick" advances the simulation.
+///	\todo Enforce increment > 0
 @property(nonatomic, assign) double		increment;
 //@}
 

@@ -89,6 +89,9 @@
 #pragma mark -
 #pragma mark IBAction
 
+///	Repetitive content of the IBAction methods responding to the sliders.
+///	Convert the slider's proportional value to the allowed range of the controlled
+///	model property, set the model, and refresh the graph.
 #define CHANGE_BODY(min, max, control, property) \
 	double	value = min + [[self control] value] * (max - min); \
 	self.model.property = value; \

@@ -24,6 +24,13 @@
 
 @class FAModel;
 
+/**	An example controller object mediating the UI and model for a simulation of a damped harmonic oscillator.
+ 
+ FAExampleController watches four sliders that set the constants and initial conditions
+ for the oscillator, updates the simulation, and tells its graph view to refresh.
+ In the course of redrawing, the graph view pulls position data from the simulator
+ through the controller.
+ */
 @interface FAExampleController : ImExController <FAGraphViewDelegate>
 {
 	UISlider *tensionSlider;
@@ -32,19 +39,33 @@
 	UISlider *speedSlider;
 	FAGraphView *graphView;
 }
-@property (nonatomic, retain) IBOutlet UISlider *tensionSlider;
-@property (nonatomic, retain) IBOutlet UISlider *dragSlider;
-@property (nonatomic, retain) IBOutlet UISlider *positionSlider;
-@property (nonatomic, retain) IBOutlet UISlider *speedSlider;
-@property (nonatomic, retain) IBOutlet FAGraphView *graphView;
 
+///	\name IBOutlets
+//@{
+@property (nonatomic, retain) IBOutlet UISlider *tensionSlider;	///< Slider to set tension.
+																///
+@property (nonatomic, retain) IBOutlet UISlider *dragSlider;	///< Slider to set drag.
+																///
+@property (nonatomic, retain) IBOutlet UISlider *positionSlider;	///< Slider to set the oscillator's initial position.
+																	///
+@property (nonatomic, retain) IBOutlet UISlider *speedSlider;	///< Slider to set the oscillator's initial velocity.
+																///
+@property (nonatomic, retain) IBOutlet FAGraphView *graphView;	///< The output graph.
+																///
+
+///	The simulation engine.
+///	This is an IBOutlet so it can be instantiated in \c FAExampleController.nib.
 @property(nonatomic, retain) IBOutlet FAModel *		model;
+//@}
 
 
-- (IBAction)changeTension:(id)sender;
-- (IBAction)changeDrag:(id)sender;
-- (IBAction)changeInitialPosition:(id)sender;
-- (IBAction)changeInitialSpeed:(id)sender;
-- (IBAction)doReset:(id)sender;
+///	\name IBActions
+//@{
+- (IBAction)changeTension:(id)sender;	///<	Respond to the tension slider.
+- (IBAction)changeDrag:(id)sender;		///<	Respond to the drag slider.
+- (IBAction)changeInitialPosition:(id)sender;	///<	Respond to the initial-position slider.
+- (IBAction)changeInitialSpeed:(id)sender;	///<	Respond to the initial-velocity slider.
+- (IBAction)doReset:(id)sender;			///<	Respond to a button by zeroing-out the simulator.
+//@}
 
 @end

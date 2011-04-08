@@ -22,12 +22,15 @@
 
 @class ImmExampleViewController;
 
+///	A bone-stock application delegate for a view-based iPhone application.
 @interface ImmExampleAppDelegate : NSObject <UIApplicationDelegate> {
 
 }
 
+///	The application window, instantiated in \c MainWindow.xib.
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
+///	The main view controller, instantated in \c MainWindow.xib.
 @property (nonatomic, retain) IBOutlet ImmExampleViewController *viewController;
 
 @end
