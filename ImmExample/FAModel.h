@@ -3,7 +3,7 @@
 //  ImmExample
 //
 //  Created by Fritz Anderson on 4/7/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Trustees of the University of Chicago. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
