@@ -29,6 +29,15 @@
 
 - (double) t { return index * self.increment; }
 
+- (void) zeroOut
+{
+	self.sZero = 0.0;
+	self.sDotZero = 0.0;
+	self.tension = 0.0;
+	self.drag = 0.0;
+	[self reset];
+}
+
 - (void) reset
 {
 	self.index = 0;

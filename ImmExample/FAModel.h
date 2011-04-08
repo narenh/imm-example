@@ -27,5 +27,6 @@
 
 - (double) tick;
 - (void) reset;
+- (void) zeroOut;
 
 @end
