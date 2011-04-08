@@ -25,10 +25,16 @@
 													   options: nil];
 		NSAssert2(views, @"%s: could not load the nib %@",
 				  __PRETTY_FUNCTION__, className);
+		
+		[self viewDidLoad];
 	}
 	return self;
 }
 
+- (void) viewDidLoad
+{
+	//	FIXME: Assert calling an abstract method?
+}
 
 - (void) dealloc
 {

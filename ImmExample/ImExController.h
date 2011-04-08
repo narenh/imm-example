@@ -28,4 +28,6 @@
 ///	The view this object controls.
 @property(nonatomic, retain) IBOutlet UIView *	view;
 
+- (void) viewDidLoad;	//	FIXME: Can this be done by subclass inits?
+
 @end
