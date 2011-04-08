@@ -21,6 +21,7 @@
 #import "FAModel.h"
 
 @interface FAModel ()
+///	\private
 @property(nonatomic, assign) NSUInteger		index;
 @end
 

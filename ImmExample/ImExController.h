@@ -23,13 +23,13 @@
 
 /**	Abstract superclass of the embedded view controllers.
  
- Note well that ImExController is \i not a subclass of UIViewController.
- UIKit does not like more than one UIViewController active in a window. This
+ Note well that ImExController is \em not a subclass of UIViewController.
+ UIKit does not like having more than one UIViewController active in a window. This
  is okay, because other objects can link up with NIB objects.
  
  ImExController relies on there being a NIB file in the main bundle with
  a base name equal to the name of the ImExController being instantiated,
- and of course the suffix .nib. -init will assert if such a NIB cannot
+ and of course the suffix \c .nib. init will assert if such a NIB cannot
  be loaded.
  */
 
@@ -40,6 +40,17 @@
 ///	The view this object controls.
 @property(nonatomic, retain) IBOutlet UIView *	view;
 
-- (void) viewDidLoad;	//	FIXME: Can this be done by subclass inits?
+/**	Designated initializer for ImExController.
+ Subclasses \em must call this method on super. It loads the corresponding NIB,
+ which must have the same base name as the subclass itself. Once the NIB is loaded,
+ viewDidLoad is called for the subclass to finish its initialization.
+ \throws Asserts if a NIB with the same name as the class is not found.
+ */
+- (id) init;
+
+/**	Notify the ImExController that its NIB has been loaded.
+ Subclassers should override this method to initialize the view. 
+ */
+- (void) viewDidLoad;
 
 @end
