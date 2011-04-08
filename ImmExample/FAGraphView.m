@@ -51,6 +51,9 @@
 	[[UIColor whiteColor] setFill];
 	CGContextFillRect(context, bounds);
 	
+	CGContextTranslateCTM(context, 0.0, CGRectGetMidY(bounds));
+	CGContextScaleCTM(context, 1.0, -VALUE_RANGE / bounds.size.height);
+	
 	//	Across my width (stepping by pixelsPerIteration...
 	BOOL			firstPass = YES;
 	NSUInteger		steps = round(bounds.size.width / self.pixelsPerIteration);
@@ -59,24 +62,13 @@
 		CGFloat		abscissa = CGRectGetMinX(bounds) + index * self.pixelsPerIteration;
 		//	y = the value for the next tick from the delegate
 		CGFloat		ordinate = [self.delegate nextValueForGraph: self];
-		
-		//	NSLog(@"%s: Raw ordinate = %f", __PRETTY_FUNCTION__, ordinate);
-		
+				
 		//	Pin it to the value range
 		if (ordinate > VALUE_MAX)
 			ordinate = VALUE_MAX;
 		if (ordinate < VALUE_MIN)
 			ordinate = VALUE_MIN;
-		
-		//	Where is it proportional to the value range?
-		ordinate = (ordinate - VALUE_MIN) / VALUE_RANGE;
-		//	Turn it into the same proportion of the view height.
-		ordinate = CGRectGetMinY(bounds) + ordinate * bounds.size.height;
-		//	TODO: redo this as a coordinate transform.
-		
-		
-		//	NSLog(@"%s: scaled ordinate = %f", __PRETTY_FUNCTION__, ordinate);
-		
+				
 		//	At the first pass, set the "pen" down at the first value;
 		//	at subsequent passes, move the "pen" to the next point.
 		if (firstPass)
