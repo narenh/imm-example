@@ -26,6 +26,11 @@
     return self;
 }
 
+- (void) awakeFromNib
+{
+	pixelsPerIteration = 1.0;
+}
+
 - (void) setPixelsPerIteration: (double) newPixelsPerIteration
 {
 	if (newPixelsPerIteration != pixelsPerIteration) {
@@ -55,6 +60,8 @@
 		//	y = the value for the next tick from the delegate
 		CGFloat		ordinate = [self.delegate nextValueForGraph: self];
 		
+		//	NSLog(@"%s: Raw ordinate = %f", __PRETTY_FUNCTION__, ordinate);
+		
 		//	Pin it to the value range
 		if (ordinate > VALUE_MAX)
 			ordinate = VALUE_MAX;
@@ -66,6 +73,9 @@
 		//	Turn it into the same proportion of the view height.
 		ordinate = CGRectGetMinY(bounds) + ordinate * bounds.size.height;
 		//	TODO: redo this as a coordinate transform.
+		
+		
+		//	NSLog(@"%s: scaled ordinate = %f", __PRETTY_FUNCTION__, ordinate);
 		
 		//	At the first pass, set the "pen" down at the first value;
 		//	at subsequent passes, move the "pen" to the next point.
