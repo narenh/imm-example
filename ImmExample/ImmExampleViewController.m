@@ -31,7 +31,7 @@ NSArray *		gExampleControllerNames	= nil;
 
 
 @implementation ImmExampleViewController
-@synthesize scrollView, toolbar;
+@synthesize scrollView;
 @synthesize controllers;
 
 + (void) initialize
@@ -47,7 +47,6 @@ NSArray *		gExampleControllerNames	= nil;
 - (void) dealloc
 {
 	[scrollView release];
-	[toolbar release];
 	[controllers release];
     [super dealloc];
 }
@@ -100,7 +99,6 @@ NSArray *		gExampleControllerNames	= nil;
 {
 	self.controllers = nil;
 	[self setScrollView:nil];
-	[self setToolbar:nil];
     [super viewDidUnload];
 }
 
