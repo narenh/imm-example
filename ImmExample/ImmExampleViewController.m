@@ -39,7 +39,7 @@ NSArray *		gExampleControllerNames	= nil;
 	//	On first reference to this class, fill the global array of controller class names.
 	if (! gExampleControllerNames) {
 		gExampleControllerNames = [[NSArray alloc] initWithObjects:
-							   @"FAExampleController",
+							   @"FAExampleController",@"MZNHController",
 							   nil];
 	}
 }

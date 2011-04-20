@@ -24,6 +24,8 @@
 		1FD33D4B134E5B2D000BB622 /* FAGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD33D4A134E5B2D000BB622 /* FAGraphView.m */; };
 		7715135A135F68060092CCD5 /* MZNHCelestialBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 77151359135F68060092CCD5 /* MZNHCelestialBody.m */; };
 		7715135D135F739F0092CCD5 /* CelestialBodyData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7715135C135F739F0092CCD5 /* CelestialBodyData.plist */; };
+		9B48980A135F89BD0076519E /* MZNHController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B489809135F89BD0076519E /* MZNHController.m */; };
+		9B48980D135F89D30076519E /* MZNHController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B48980C135F89D30076519E /* MZNHController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,9 @@
 		77151358135F68060092CCD5 /* MZNHCelestialBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZNHCelestialBody.h; sourceTree = "<group>"; };
 		77151359135F68060092CCD5 /* MZNHCelestialBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZNHCelestialBody.m; sourceTree = "<group>"; };
 		7715135C135F739F0092CCD5 /* CelestialBodyData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CelestialBodyData.plist; sourceTree = "<group>"; };
+		9B489808135F89BD0076519E /* MZNHController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZNHController.h; sourceTree = "<group>"; };
+		9B489809135F89BD0076519E /* MZNHController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZNHController.m; sourceTree = "<group>"; };
+		9B48980C135F89D30076519E /* MZNHController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZNHController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +148,9 @@
 				1FD33D35134E4A57000BB622 /* FAExampleController.h */,
 				1FD33D36134E4A57000BB622 /* FAExampleController.m */,
 				1FD33D3C134E50C4000BB622 /* FAExampleController.xib */,
+				9B489808135F89BD0076519E /* MZNHController.h */,
+				9B489809135F89BD0076519E /* MZNHController.m */,
+				9B48980C135F89D30076519E /* MZNHController.xib */,
 			);
 			name = "Custom Controllers";
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 				1FD33D3D134E50C4000BB622 /* FAExampleController.xib in Resources */,
 				1FD33D47134E5293000BB622 /* FAExampleBackground.png in Resources */,
 				7715135D135F739F0092CCD5 /* CelestialBodyData.plist in Resources */,
+				9B48980D135F89D30076519E /* MZNHController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +247,7 @@
 				1FD33D3A134E4B07000BB622 /* FAModel.m in Sources */,
 				1FD33D4B134E5B2D000BB622 /* FAGraphView.m in Sources */,
 				7715135A135F68060092CCD5 /* MZNHCelestialBody.m in Sources */,
+				9B48980A135F89BD0076519E /* MZNHController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
