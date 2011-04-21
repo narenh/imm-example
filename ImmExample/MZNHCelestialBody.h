@@ -16,10 +16,12 @@
 @property(readonly)             CGPoint position;
 @property float                 orbital_radius;
 @property float                 angular_velocity;
+@property float                 surface_temp;
 @property float                 angle;
 
 // Other information
 @property(retain) NSString *    name;
+@property(retain) UIImage *    image;
 @property float                 mass;
 @property float                 radius;
 

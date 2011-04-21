@@ -11,9 +11,9 @@
 
 @implementation MZNHCelestialBody
 
-@synthesize origin, orbital_radius, angular_velocity, angle;
+@synthesize origin, orbital_radius, angular_velocity, angle, surface_temp;
 
-@synthesize name, mass, radius;
+@synthesize name, image, mass, radius;
 
 // Simply calculate the current position based on the origin and current angle.
 - (CGPoint) position {
@@ -38,7 +38,7 @@
     for (NSString * name in plistDict) {
         MZNHCelestialBody * body = [MZNHCelestialBody celestialBodyWithName: name dictionary: [plistDict objectForKey: name]];
         [bodies addObject: body];
-        NSLog(@"%f %f", body.position.x, body.position.y);
+        //NSLog(@"%f %f", body.position.x, body.position.y);
     }
     return bodies;
 }
@@ -48,12 +48,14 @@
 + (MZNHCelestialBody *) celestialBodyWithName: (NSString *) name dictionary: (NSDictionary *) dict {
     MZNHCelestialBody * body = [[MZNHCelestialBody alloc] init];
     body.name = name;
+    body.image = [UIImage imageNamed:[dict objectForKey:@"image"]];
     CGPoint origin = CGPointZero;
     origin.x = FLOAT_FROM_DICT([dict objectForKey: @"origin"], @"x");
     origin.y = FLOAT_FROM_DICT([dict objectForKey: @"origin"], @"y");
     body.origin = origin;
     body.orbital_radius = FLOAT_FROM_DICT(dict, @"orbital_radius");
     body.angular_velocity = FLOAT_FROM_DICT(dict, @"angular_velocity");
+    body.surface_temp = FLOAT_FROM_DICT(dict, @"surface_temp");
     body.angle = FLOAT_FROM_DICT(dict, @"angle");
     body.mass = FLOAT_FROM_DICT(dict, @"mass");
     body.radius = FLOAT_FROM_DICT(dict, @"radius");

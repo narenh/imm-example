@@ -8,9 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "ImExController.h"
+#import "MZNHCelestialBody.h"
 
-@interface MZNHController : ImExController {
+@interface MZNHController : ImExController <UIGestureRecognizerDelegate>{
+    NSArray *bodies;
+    NSMutableArray *bodyViews;
+    IBOutlet UIView *infoView;
+    IBOutlet UIProgressView *timeScale;
+    IBOutlet UIButton *startButton;
+    IBOutlet UILabel *nameLabel;
+    IBOutlet UILabel *tempLabel;
     
 }
-
+- (IBAction)animate:(id)sender;
+- (void)displayInfo:(id)sender;
+- (void)hideInfo;
 @end

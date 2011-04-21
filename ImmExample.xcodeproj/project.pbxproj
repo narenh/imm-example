@@ -26,6 +26,9 @@
 		7715135D135F739F0092CCD5 /* CelestialBodyData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7715135C135F739F0092CCD5 /* CelestialBodyData.plist */; };
 		9B48980A135F89BD0076519E /* MZNHController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B489809135F89BD0076519E /* MZNHController.m */; };
 		9B48980D135F89D30076519E /* MZNHController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B48980C135F89D30076519E /* MZNHController.xib */; };
+		9B489825135FB7660076519E /* Planet1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B489822135FB7660076519E /* Planet1.png */; };
+		9B489826135FB7660076519E /* Planet3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B489823135FB7660076519E /* Planet3.png */; };
+		9B489827135FB7660076519E /* Planet2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B489824135FB7660076519E /* Planet2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		9B489808135F89BD0076519E /* MZNHController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZNHController.h; sourceTree = "<group>"; };
 		9B489809135F89BD0076519E /* MZNHController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZNHController.m; sourceTree = "<group>"; };
 		9B48980C135F89D30076519E /* MZNHController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZNHController.xib; sourceTree = "<group>"; };
+		9B489822135FB7660076519E /* Planet1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Planet1.png; sourceTree = "<group>"; };
+		9B489823135FB7660076519E /* Planet3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Planet3.png; sourceTree = "<group>"; };
+		9B489824135FB7660076519E /* Planet2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Planet2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,9 @@
 		1FD33D17134E33A1000BB622 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9B489822135FB7660076519E /* Planet1.png */,
+				9B489823135FB7660076519E /* Planet3.png */,
+				9B489824135FB7660076519E /* Planet2.png */,
 				1FD33D18134E33A1000BB622 /* ImmExample-Info.plist */,
 				1FD33D19134E33A1000BB622 /* InfoPlist.strings */,
 				1FD33D1C134E33A1000BB622 /* ImmExample-Prefix.pch */,
@@ -229,6 +238,9 @@
 				1FD33D47134E5293000BB622 /* FAExampleBackground.png in Resources */,
 				7715135D135F739F0092CCD5 /* CelestialBodyData.plist in Resources */,
 				9B48980D135F89D30076519E /* MZNHController.xib in Resources */,
+				9B489825135FB7660076519E /* Planet1.png in Resources */,
+				9B489826135FB7660076519E /* Planet3.png in Resources */,
+				9B489827135FB7660076519E /* Planet2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
