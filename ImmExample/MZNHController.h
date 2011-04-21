@@ -18,9 +18,11 @@
     IBOutlet UIButton *startButton;
     IBOutlet UILabel *nameLabel;
     IBOutlet UILabel *tempLabel;
+    IBOutlet UIView *progressDot;
     
 }
 - (IBAction)animate:(id)sender;
 - (void)displayInfo:(id)sender;
 - (void)hideInfo;
+- (void)orbit:(UIView *)planet origin:(CGPoint)o o_rad:(float)R radius:(float)r time:(float)t;
 @end

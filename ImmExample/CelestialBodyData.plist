@@ -4,12 +4,12 @@
 <dict>
 	<key>Asteroid 3</key>
 	<dict>
-		<key>image</key>
-		<string>Planet1.png</string>
 		<key>angle</key>
 		<integer>-1</integer>
 		<key>angular_velocity</key>
 		<integer>9</integer>
+		<key>image</key>
+		<string>Planet1.png</string>
 		<key>mass</key>
 		<integer>20</integer>
 		<key>orbital_radius</key>
@@ -22,18 +22,18 @@
 			<integer>20</integer>
 		</dict>
 		<key>radius</key>
-		<integer>50</integer>
+		<integer>25</integer>
 		<key>surface_temp</key>
 		<integer>2</integer>
 	</dict>
 	<key>Mahirica 1</key>
 	<dict>
-		<key>image</key>
-		<string>Planet2.png</string>
 		<key>angle</key>
 		<real>1.3</real>
 		<key>angular_velocity</key>
 		<integer>7</integer>
+		<key>image</key>
+		<string>Planet2.png</string>
 		<key>mass</key>
 		<integer>200</integer>
 		<key>orbital_radius</key>
@@ -46,18 +46,18 @@
 			<integer>50</integer>
 		</dict>
 		<key>radius</key>
-		<integer>100</integer>
+		<integer>50</integer>
 		<key>surface_temp</key>
 		<real>40.5</real>
 	</dict>
 	<key>Platyplaxus Prime</key>
 	<dict>
-		<key>image</key>
-		<string>Planet3.png</string>
 		<key>angle</key>
 		<integer>0</integer>
 		<key>angular_velocity</key>
 		<integer>5</integer>
+		<key>image</key>
+		<string>Planet3.png</string>
 		<key>mass</key>
 		<integer>300</integer>
 		<key>orbital_radius</key>
@@ -70,7 +70,7 @@
 			<integer>160</integer>
 		</dict>
 		<key>radius</key>
-		<integer>150</integer>
+		<integer>75</integer>
 		<key>surface_temp</key>
 		<integer>153</integer>
 	</dict>
