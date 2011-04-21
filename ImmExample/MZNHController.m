@@ -12,6 +12,7 @@
 @implementation MZNHController
 
 -(void)viewDidLoad {
+    // infoView hides on tap
     UITapGestureRecognizer *singleTapRecognizer = [[UITapGestureRecognizer alloc]
 												   initWithTarget:self action:@selector(hideInfo)];
 	[singleTapRecognizer setNumberOfTapsRequired:1];
@@ -19,10 +20,14 @@
 	[infoView addGestureRecognizer:singleTapRecognizer];
 	[singleTapRecognizer release];
     
+    // load celestial bodies from plist
     bodies = [[MZNHCelestialBody celestialBodiesFromPlist:@"CelestialBodyData"] retain];
+    // store pointers to UIButton objects
     bodyViews = [[NSMutableArray alloc] init];
+    
     for (int i=0;i<[bodies count];i++) {
         MZNHCelestialBody *body = [bodies objectAtIndex:i];
+        // Apparently, UIButton is less expensive than a UIImageView configured for touches... I'm not sure if I believe that.
         UIButton *theView = [[UIButton alloc] initWithFrame:CGRectMake(body.origin.x, body.origin.y, 2*body.radius, 2*body.radius)];
         [theView setImage:body.image forState:UIControlStateNormal];
         theView.adjustsImageWhenHighlighted = NO;
@@ -36,18 +41,6 @@
         [theView release];
     }
     
-}
-
-- (void)dealloc {
-    [infoView release];
-    [timeScale release];
-    [startButton release];
-    [nameLabel release];
-    [tempLabel release];
-    [bodies release];
-    [bodyViews release];
-    [progressDot release];
-    [super dealloc];
 }
 
 - (IBAction)animate:(id)sender {
@@ -70,8 +63,8 @@
                      completion:^(BOOL finished){startButton.hidden=NO;}];
 }
 
-
 - (void)orbit:(UIView *)planet origin:(CGPoint)o o_rad:(float)R radius:(float)r time:(float)t {
+    // Chained animations
     [UIView animateWithDuration:t/8
                           delay:0
                         options:(UIViewAnimationCurveLinear | UIViewAnimationOptionAllowUserInteraction)
@@ -121,4 +114,17 @@
 - (void)hideInfo {
     infoView.hidden=YES;
 }
+
+- (void)dealloc {
+    [infoView release];
+    [timeScale release];
+    [startButton release];
+    [nameLabel release];
+    [tempLabel release];
+    [bodies release];
+    [bodyViews release];
+    [progressDot release];
+    [super dealloc];
+}
+
 @end
